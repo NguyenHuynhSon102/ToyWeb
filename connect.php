@@ -8,14 +8,14 @@
 
         public function __construct()
         {
-            $this -> server = "ik1eybdutgxsm0lo.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-            $this -> user = "nf4jn2ryu0mgxbk1";
-            $this -> password = "vjexifr2e8f467v6";
-            $this -> dbName = "ll6x5f0texpwhexr";
-            // $this -> server = "localhost";
-            // $this -> user = "root";
-            // $this -> password = "";
-            // $this -> dbName = "shop";
+            // $this -> server = "ik1eybdutgxsm0lo.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+            // $this -> user = "nf4jn2ryu0mgxbk1";
+            // $this -> password = "vjexifr2e8f467v6";
+            // $this -> dbName = "ll6x5f0texpwhexr";
+            $this -> server = "localhost";
+            $this -> user = "root";
+            $this -> password = "";
+            $this -> dbName = "shop";
 
         }
         //Option 1: use mySQL (no condition)

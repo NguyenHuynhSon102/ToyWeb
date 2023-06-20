@@ -13,6 +13,7 @@
         $pQuantity = $_POST['pQuantity'];
         $pCat_id = $_POST['pCat_id'];
         $pSupplier = $_POST['pSupplier'];
+        $pEmployee = $_POST['pEmployee'];
         /*lưu ảnh trong project, không lưu trong ổ c,d */
         $storedImage = "./images/";
 
@@ -25,9 +26,9 @@
     // $re = $dblink->prepare($sql);
     // $stmt = $re-> execute(array("P003","Deathadder essential","650000",1,"$img","Mouse",23,"C01"));
         $sql="INSERT INTO `products`(`pid`, `pName`, `pImportPrice`, `pPrice`,
-         `pStatus`, `pImage`, `pDesc`, `pQuantity`, `pCat_id`,`pSupplier`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+         `pStatus`, `pImage`, `pDesc`, `pQuantity`, `pCat_id`,`pSupplier`, `pEmployee`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $re = $dblink->prepare($sql);
-        $stmt = $re->execute(array($pid,$pName,$pImportPrice,$pPrice,$pStatus,$img,$pDesc,$pQuantity,$pCat_id,$pSupplier));
+        $stmt = $re->execute(array($pid,$pName,$pImportPrice,$pPrice,$pStatus,$img,$pDesc,$pQuantity,$pCat_id,$pSupplier,$pEmployee));
         if($stmt == TRUE)
         {
             echo "Create Success!";
@@ -110,6 +111,13 @@
                                         <div class="form-group">
                                             <label for="image-vertical">Image</label>
                                             <input type="file" name="Pro_image" id="Pro_image" 
+                                            class="form-control" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Employee: </label>
+                                            <input type="text" name="pEmployee" id="pEmployee" 
                                             class="form-control" value="">
                                         </div>
                                     </div>
