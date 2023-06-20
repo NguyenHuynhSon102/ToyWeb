@@ -8,10 +8,10 @@
 
         public function __construct()
         {
-            $this -> server = "vkh7buea61avxg07.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-            $this -> user = "f0e1o44if5g6yjm9";
-            $this -> password = "v7eb276hj3fo1fp5";
-            $this -> dbName = "kn1tyhhse6f0llmq";
+            $this -> server = "l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+            $this -> user = "ue69btoobxikd8mf";
+            $this -> password = "ochrrfh851z70g1y";
+            $this -> dbName = "mqyp857k8dwq4es0";
             // $this -> server = "localhost";
             // $this -> user = "root";
             // $this -> password = "";
