@@ -13,7 +13,6 @@
                             <input type="text" class="input-field" placeholder="Search here..."  name="search">
                         </div> 
                 </form>
-                <!-- <button class="btn btn-primary" name="btnSearch">Search</button> --> 
             </div>
 </div>
         </div>
@@ -26,12 +25,7 @@
                 $dblink = $c -> connectToPDO();
                 $nameP = $_GET['search'];                
                 $sql = "SELECT * FROM products WHERE pName LIKE ?";
-                // $sql = "SELECT * FROM Product WHERE pName LIKE CONCAT('%',:nameP,'%')";
                 $re = $dblink->prepare($sql);
-
-                // $row1 = $re ->fetch_row();
-
-                //  $re -> bindParam(':nameP',$nameP, PDO::PARAM_STR);
                 $re -> execute(array("%$nameP%"));
                 $rows = $re -> fetchAll(PDO::FETCH_BOTH);
                 foreach($rows as $r):
@@ -50,8 +44,7 @@
                                 <h6 class="card-subtitle mb-2 text-muted"><span>&#8363;</span><?=$r['pPrice']?></h6>
                                 <a href="#" class="btn btn-primary">Add to Cart</a>
                             </div>
-                       </div>             
-        
+                       </div>           
                 </div>
             <?php
             endforeach;

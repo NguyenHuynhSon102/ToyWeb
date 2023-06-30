@@ -2,7 +2,6 @@
     include_once './header.php';
     include_once './connect.php';
     if(isset($_POST['btnSubmit'])){
-        
         $pid = $_POST['pid'];
         $pName = $_POST['pName'];
         $pImportPrice = $_POST['pImportPrice'];
@@ -14,17 +13,11 @@
         $pCat_id = $_POST['pCat_id'];
         $pSupplier = $_POST['pSupplier'];
         $pEmployee = $_POST['pEmployee'];
-        /*lưu ảnh trong project, không lưu trong ổ c,d */
         $storedImage = "./images/";
-
         $flag = move_uploaded_file($_FILES['Pro_image']['tmp_name'],$storedImage.$img);
         if($flag){
         $c = new Connect();
-        $dblink = $c -> connectToPDO();     
-    //     $sql = "INSERT INTO `product`(`pid`, `pName`, `pPrice`,`pStatus`, `pImage`, `pDesc`, `pQuantity`, `pCat_id`) VALUES (?,?,?,?,?,?,?,?)";
-
-    // $re = $dblink->prepare($sql);
-    // $stmt = $re-> execute(array("P003","Deathadder essential","650000",1,"$img","Mouse",23,"C01"));
+        $dblink = $c -> connectToPDO();
         $sql="INSERT INTO `products`(`pid`, `pName`, `pImportPrice`, `pPrice`,
          `pStatus`, `pImage`, `pDesc`, `pQuantity`, `pCat_id`,`pSupplier`, `pEmployee`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $re = $dblink->prepare($sql);
